@@ -83,3 +83,22 @@
   background-color: #218838;
   box-shadow: 0 6px 8px rgba(33, 136, 56, 0.4); /* Stronger green glow on hover */
 }
+
+/* Dark pink button style */
+.past-entries-button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: #8b1cd4; /* Dark pink background */
+  color: white; /* White text for contrast */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(194, 24, 91, 0.4); /* Subtle glow effect */
+}
+
+.past-entries-button:hover {
+  background-color: #660f5a; /* Darker pink on hover */
+  box-shadow: 0 6px 8px rgba(136, 14, 79, 0.5); /* Stronger glow on hover */
+}

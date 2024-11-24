@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PastEntries.css';
 
 function PastEntries() {
   const [entries, setEntries] = useState([]);
+  const navigate = useNavigate(); // Hook para redirigir a otra pantalla
 
   // Cargar entradas desde Local Storage al montar el componente
   useEffect(() => {
@@ -53,6 +55,14 @@ function PastEntries() {
 
   return (
     <div className="entries-container">
+      <div className="entries-header">
+        <button
+          className="back-to-home-button"
+          onClick={() => navigate('/')}
+        >
+          Volver al Inicio
+        </button>
+      </div>
       <h1>Entradas Pasadas</h1>
       <div className="entries-actions">
         <button className="export-button" onClick={exportEntries}>

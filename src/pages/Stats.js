@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
+import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 import {
   Chart as ChartJS,
   BarElement,
@@ -21,13 +22,13 @@ function Stats() {
   });
 
   const [entriesPerDay, setEntriesPerDay] = useState([]);
+  const navigate = useNavigate(); // Hook para redirigir al inicio
 
   useEffect(() => {
     const history = JSON.parse(localStorage.getItem('dailyFormHistory')) || [];
 
-    // Agrupar entradas por fecha y calcular metas cumplidas/no cumplidas
     const entriesByDate = history.reduce((acc, entry) => {
-      const date = new Date(entry.timestamp).toLocaleDateString(); // Usar timestamp para identificar fechas únicas
+      const date = new Date(entry.timestamp).toLocaleDateString();
       if (!acc[date]) {
         acc[date] = {
           count: 0,
@@ -44,7 +45,6 @@ function Stats() {
     const totalDays = Object.keys(entriesByDate).length;
     const totalEntries = history.length;
 
-    // Calcular metas cumplidas/no cumplidas totales
     const goalsCompleted = Object.values(entriesByDate).reduce(
       (sum, day) => sum + day.goalsCompleted,
       0
@@ -72,17 +72,15 @@ function Stats() {
 
   const exportData = () => {
     const history = JSON.parse(localStorage.getItem('dailyFormHistory')) || [];
-    const dataStr = JSON.stringify(history, null, 2); // Formatear datos con indentación
+    const dataStr = JSON.stringify(history, null, 2);
     const blob = new Blob([dataStr], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
 
-    // Crear un enlace temporal para descargar el archivo
     const link = document.createElement('a');
     link.href = url;
     link.download = 'reflexiones.json';
     link.click();
 
-    // Liberar el objeto URL
     URL.revokeObjectURL(url);
   };
 
@@ -110,6 +108,11 @@ function Stats() {
 
   return (
     <div className="stats-container">
+      <div className="stats-header">
+        <button className="back-to-home-button" onClick={() => navigate('/')}>
+          Volver al Inicio
+        </button>
+      </div>
       <h1>Estadísticas</h1>
       {stats.totalDays === 0 ? (
         <p>No hay datos registrados aún.</p>

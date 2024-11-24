@@ -122,3 +122,42 @@ h1 {
     text-align: center;
   }
 }
+
+/* Contenedor del encabezado */
+.entries-header {
+  display: flex;
+  align-items: center; /* Alinea verticalmente el botón y el título */
+  margin-bottom: 1rem; /* Espacio debajo del encabezado */
+  margin-top: 1.5rem; /* Espacio superior desde el borde */
+  gap: 1rem; /* Espacio entre el botón y el título */
+}
+
+/* Botón para volver al inicio */
+.back-to-home-button {
+  padding: 1.2rem 2rem; /* Botón más grande */
+  font-size: 1.4rem; /* Texto más grande */
+  font-weight: bold;
+  background-color: #c2185b; /* Rosa oscuro */
+  color: white; /* Texto blanco */
+  border: none;
+  border-radius: 10px; /* Bordes más redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(194, 24, 91, 0.4); /* Sombra llamativa */
+  margin-left: 1.5rem; /* Despega el botón del borde izquierdo */
+}
+
+.back-to-home-button:hover {
+  background-color: #880e4f; /* Rosa más oscuro */
+  transform: scale(1.05); /* Leve aumento en tamaño */
+  box-shadow: 0 6px 10px rgba(136, 14, 79, 0.5); /* Sombra más intensa */
+}
+
+/* Título */
+.entries-header h1 {
+  text-align: center; /* Título centrado */
+  flex-grow: 1; /* Ocupa el espacio restante para centrarlo automáticamente */
+  font-size: 2rem;
+  color: #ffffff;
+  margin: 0; /* Elimina el margen predeterminado del h1 */
+}

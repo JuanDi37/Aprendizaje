@@ -23,6 +23,12 @@ function Welcome() {
       >
         Ver Estadísticas
       </button>
+      <button
+        className="past-entries-button"
+        onClick={() => navigate('/entries')}
+      >
+        Ver Entradas Pasadas
+      </button>
     </div>
   );
 }
