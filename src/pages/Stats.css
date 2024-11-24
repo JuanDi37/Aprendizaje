@@ -1,54 +1,63 @@
+/* Stats container */
 .stats-container {
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fdfdfd;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  h1 {
-    margin-bottom: 1.5rem;
-    color: #333;
-  }
-  
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: #555;
-  }
-  
-  .chart-container {
-    margin-top: 2rem;
-  }
-  
-  .chart-container {
-    margin-top: 2rem;
-    background-color: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .chart-container h2 {
-    margin-bottom: 1rem;
-    color: #333;
-  }
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #1f1f1f; /* Dark mode background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+  text-align: center;
+  color: #e0e0e0; /* Light text color */
+}
 
-  .export-button {
-    margin-top: 2rem;
-    padding: 0.8rem 1.5rem;
-    font-size: 1.1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .export-button:hover {
-    background-color: #0056b3;
-  }
-  
+/* Main title */
+.stats-container h1 {
+  margin-bottom: 1.5rem;
+  color: #ffffff; /* Bright white for contrast */
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */
+}
+
+/* Paragraph text */
+.stats-container p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #cfcfcf; /* Softer light text */
+}
+
+/* Chart container */
+.chart-container {
+  margin-top: 2rem;
+  background-color: #292929; /* Slightly lighter dark background */
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Consistent shadow */
+}
+
+/* Chart title */
+.chart-container h2 {
+  margin-bottom: 1rem;
+  color: #ffffff; /* Bright white for contrast */
+  font-size: 1.5rem;
+}
+
+/* Export button */
+.export-button {
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  background-color: #007bff; /* Blue for primary action */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3); /* Subtle glow effect */
+}
+
+.export-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 8px rgba(0, 86, 179, 0.4); /* Stronger glow on hover */
+}
+

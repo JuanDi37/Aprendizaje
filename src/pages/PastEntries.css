@@ -1,61 +1,123 @@
+/* Estilo global: tema oscuro */
+body {
+  background-color: #121212; /* Dark mode background */
+  color: #e0e0e0;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Título principal */
+h1 {
+  color: #ffffff; /* Bright white for maximum contrast */
+  font-size: 2rem; /* Larger font size */
+  font-weight: bold; /* Make it bold */
+  text-align: center; /* Center-align text */
+  margin: 1.5rem 0; /* Add space around the title */
+}
+
+/* Contenedor de las acciones */
 .entries-actions {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* Botones de exportar e importar */
 .export-button,
 .import-button {
   font-size: 1rem;
   padding: 0.8rem 1.5rem;
-  background-color: #007bff;
-  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  color: white;
 }
 
-.import-button {
-  background-color: #28a745;
+.export-button {
+  background-color: #007bff;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
 }
 
 .export-button:hover {
   background-color: #0056b3;
+  box-shadow: 0 6px 8px rgba(0, 86, 179, 0.4);
+}
+
+.import-button {
+  background-color: #28a745;
+  box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3);
 }
 
 .import-button:hover {
   background-color: #218838;
+  box-shadow: 0 6px 8px rgba(33, 136, 56, 0.4);
 }
 
+/* Lista de entradas */
 .entries-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
+/* Elementos de la lista */
 .entry-item {
-  border: 1px solid #ccc;
+  border: 1px solid #444;
   padding: 1rem;
   margin-bottom: 1rem;
-  border-radius: 4px;
-  background-color: #f9f9f9;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.entry-item:hover {
+  background-color: #292929;
+  transform: translateY(-5px);
 }
 
 .entry-item p {
   margin: 0.5rem 0;
+  color: #cfcfcf;
 }
 
+/* Botón de eliminar */
 .delete-button {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  background-color: #dc3545;
-  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  background-color: #dc3545;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(220, 53, 69, 0.3);
 }
 
 .delete-button:hover {
   background-color: #b02a37;
+  box-shadow: 0 6px 8px rgba(176, 42, 55, 0.4);
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .entries-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .export-button,
+  .import-button {
+    width: 100%;
+    text-align: center;
+  }
 }

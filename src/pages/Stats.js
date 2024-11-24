@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; 
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -15,6 +15,7 @@ ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 function Stats() {
   const [stats, setStats] = useState({
     totalDays: 0,
+    totalEntries: 0,
     goalsCompleted: 0,
     goalsNotCompleted: 0,
   });
@@ -23,20 +24,50 @@ function Stats() {
 
   useEffect(() => {
     const history = JSON.parse(localStorage.getItem('dailyFormHistory')) || [];
-    
-    const totalDays = history.length;
-    const goalsCompleted = history.filter((entry) => entry.yesterdayGoals === 'yes').length;
-    const goalsNotCompleted = totalDays - goalsCompleted;
 
-    const entriesByDay = history.map((_, index) => `Día ${index + 1}`);
+    // Agrupar entradas por fecha y calcular metas cumplidas/no cumplidas
+    const entriesByDate = history.reduce((acc, entry) => {
+      const date = new Date(entry.timestamp).toLocaleDateString(); // Usar timestamp para identificar fechas únicas
+      if (!acc[date]) {
+        acc[date] = {
+          count: 0,
+          goalsCompleted: 0,
+          goalsNotCompleted: 0,
+        };
+      }
+      acc[date].count += 1;
+      if (entry.yesterdayGoals === 'yes') acc[date].goalsCompleted += 1;
+      if (entry.yesterdayGoals === 'no') acc[date].goalsNotCompleted += 1;
+      return acc;
+    }, {});
+
+    const totalDays = Object.keys(entriesByDate).length;
+    const totalEntries = history.length;
+
+    // Calcular metas cumplidas/no cumplidas totales
+    const goalsCompleted = Object.values(entriesByDate).reduce(
+      (sum, day) => sum + day.goalsCompleted,
+      0
+    );
+    const goalsNotCompleted = Object.values(entriesByDate).reduce(
+      (sum, day) => sum + day.goalsNotCompleted,
+      0
+    );
+
+    const entriesByDayLabels = Object.keys(entriesByDate);
+    const entriesByDayData = Object.values(entriesByDate).map(day => day.count);
 
     setStats({
       totalDays,
+      totalEntries,
       goalsCompleted,
       goalsNotCompleted,
     });
 
-    setEntriesPerDay(entriesByDay);
+    setEntriesPerDay({
+      labels: entriesByDayLabels,
+      data: entriesByDayData,
+    });
   }, []);
 
   const exportData = () => {
@@ -67,11 +98,11 @@ function Stats() {
   };
 
   const entriesData = {
-    labels: entriesPerDay,
+    labels: entriesPerDay.labels,
     datasets: [
       {
         label: 'Entradas por Día',
-        data: Array(entriesPerDay.length).fill(1),
+        data: entriesPerDay.data,
         backgroundColor: '#007bff',
       },
     ],
@@ -85,6 +116,7 @@ function Stats() {
       ) : (
         <>
           <p><strong>Total de días registrados:</strong> {stats.totalDays}</p>
+          <p><strong>Total de entradas registradas:</strong> {stats.totalEntries}</p>
           <p><strong>Porcentaje de metas cumplidas:</strong> {((stats.goalsCompleted / stats.totalDays) * 100).toFixed(2)}%</p>
           
           <div className="chart-container">

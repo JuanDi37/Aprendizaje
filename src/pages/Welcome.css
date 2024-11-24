@@ -1,3 +1,4 @@
+/* Welcome container */
 .welcome-container {
   display: flex;
   flex-direction: column;
@@ -5,49 +6,59 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
-  background-color: #f0f8ff;
+  background-color: #121212; /* Dark mode background */
+  color: #e0e0e0; /* Light text color */
 }
 
+/* Welcome title */
 .welcome-title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #333;
+  color: #ffffff; /* Bright white for maximum contrast */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Add subtle shadow for depth */
 }
 
+/* Welcome message */
 .welcome-message {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: #555;
+  color: #cfcfcf; /* Softer light text */
 }
 
+/* Welcome button: Primary action */
 .welcome-button {
   font-size: 1rem;
   padding: 0.8rem 1.5rem;
-  background-color: #007bff;
+  background-color: #007bff; /* Blue for primary action */
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3); /* Subtle blue glow */
   margin-bottom: 1rem;
 }
 
 .welcome-button:hover {
   background-color: #0056b3;
+  box-shadow: 0 6px 8px rgba(0, 86, 179, 0.4); /* Stronger blue glow on hover */
 }
 
+/* Stats button: Secondary action */
 .stats-button {
   font-size: 1rem;
   padding: 0.8rem 1.5rem;
-  background-color: #28a745;
+  background-color: #28a745; /* Green for secondary action */
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3); /* Subtle green glow */
 }
 
 .stats-button:hover {
   background-color: #218838;
+  box-shadow: 0 6px 8px rgba(33, 136, 56, 0.4); /* Stronger green glow on hover */
 }

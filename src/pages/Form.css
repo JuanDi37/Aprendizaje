@@ -1,57 +1,135 @@
-.form-container {
-    padding: 2rem;
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fdfdfd;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+/* Dark mode form container */
+.form-container { 
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #1f1f1f; /* Dark background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+}
+
+/* Form title */
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #ffffff; /* Bright white for contrast */
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Form group spacing */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #e0e0e0; /* Light text for dark background */
+}
+
+/* Input fields: textarea and select */
+textarea,
+select {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #444; /* Darker border for inputs */
+  background-color: #292929; /* Match the dark mode aesthetic */
+  color: #ffffff; /* Light text color */
+  border-radius: 4px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+textarea {
+  resize: vertical;
+  height: 80px;
+}
+
+/* Input focus styles */
+textarea:focus,
+select:focus {
+  border-color: #007bff; /* Highlight border on focus */
+  background-color: #1e1e1e; /* Subtle background change on focus */
+  outline: none;
+}
+
+/* Submit button */
+button.form-submit {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  background-color: #007bff; /* Blue for primary action */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3); /* Subtle glow effect */
+}
+
+button.form-submit:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 8px rgba(0, 86, 179, 0.4); /* Stronger glow on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 1.5rem;
   }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #333;
-  }
-  
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-  
-  label {
-    display: block;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: #555;
-  }
-  
-  textarea,
-  select {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  textarea {
-    resize: vertical;
-    height: 80px;
-  }
-  
+
   button.form-submit {
-    display: block;
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1.2rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    padding: 0.7rem;
   }
-  
-  button.form-submit:hover {
-    background-color: #0056b3;
-  }
-  
+}
+
+/* Submit button: Primary action */
+button.form-submit {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  background-color: #007bff; /* Blue for primary action */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3); /* Subtle glow effect */
+}
+
+button.form-submit:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 8px rgba(0, 86, 179, 0.4); /* Stronger glow on hover */
+}
+
+/* View entries button: Secondary action */
+button.view-entries-button {
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  background-color: #28a745; /* Green for secondary action */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3); /* Subtle glow for green */
+}
+
+button.view-entries-button:hover {
+  background-color: #218838;
+  box-shadow: 0 6px 8px rgba(33, 136, 56, 0.4); /* Stronger glow on hover */
+}
+
+/* Button alignment for better spacing */
+button {
+  font-family: inherit; /* Ensure buttons inherit font styles */
+  text-align: center;
+}

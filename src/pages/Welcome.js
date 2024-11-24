@@ -7,7 +7,7 @@ function Welcome() {
 
   return (
     <div className="welcome-container">
-      <h1 className="welcome-title">¡Bienvenido a Aprendizajes!</h1>
+      <h1 className="welcome-title">¡Bienvenido a tu plataforma de Aprendizajes!</h1>
       <p className="welcome-message">
         Reflexiona sobre tus metas, aprendizajes y agradecimientos diarios. ¡Empieza hoy!
       </p>

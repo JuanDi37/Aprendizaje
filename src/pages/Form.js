@@ -31,9 +31,15 @@ function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Añadir un timestamp a la entrada
+    const entryWithTimestamp = {
+      ...formData,
+      timestamp: new Date().toISOString(), // Agregar la fecha y hora actual
+    };
+
     // Guardar entrada actual en el historial
     const history = JSON.parse(localStorage.getItem('dailyFormHistory')) || [];
-    history.push(formData);
+    history.push(entryWithTimestamp);
     localStorage.setItem('dailyFormHistory', JSON.stringify(history));
 
     // Guardar la entrada actual
@@ -110,5 +116,3 @@ function Form() {
 }
 
 export default Form;
-
-
