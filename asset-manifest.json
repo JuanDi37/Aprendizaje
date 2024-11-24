@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/JuanDi37/Aprendizaje/static/css/main.e7caa6d1.css",
+    "main.js": "/JuanDi37/Aprendizaje/static/js/main.44b809ec.js",
+    "static/js/453.4f3ecf7a.chunk.js": "/JuanDi37/Aprendizaje/static/js/453.4f3ecf7a.chunk.js",
+    "static/media/WelcomeBackground.png": "/JuanDi37/Aprendizaje/static/media/WelcomeBackground.491ae0ed0eed70edf95e.png",
+    "index.html": "/JuanDi37/Aprendizaje/index.html",
+    "main.e7caa6d1.css.map": "/JuanDi37/Aprendizaje/static/css/main.e7caa6d1.css.map",
+    "main.44b809ec.js.map": "/JuanDi37/Aprendizaje/static/js/main.44b809ec.js.map",
+    "453.4f3ecf7a.chunk.js.map": "/JuanDi37/Aprendizaje/static/js/453.4f3ecf7a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7caa6d1.css",
+    "static/js/main.44b809ec.js"
+  ]
+}
