@@ -7,21 +7,21 @@ import Stats from './pages/Stats';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Aprendizaje">
       <Routes>
-        {/* Redirige la ruta raíz (/) a la pantalla de bienvenida */}
+        {/* Redirect the root route (/) to the welcome screen */}
         <Route path="/" element={<Navigate to="/welcome" replace />} />
-        
-        {/* Ruta para la pantalla de bienvenida */}
+
+        {/* Route for the welcome screen */}
         <Route path="/welcome" element={<Welcome />} />
-        
-        {/* Ruta para el formulario diario */}
+
+        {/* Route for the daily form */}
         <Route path="/form" element={<Form />} />
-        
-        {/* Ruta para las entradas pasadas */}
+
+        {/* Route for past entries */}
         <Route path="/entries" element={<PastEntries />} />
-        
-        {/* Ruta para las estadísticas */}
+
+        {/* Route for statistics */}
         <Route path="/stats" element={<Stats />} />
       </Routes>
     </Router>
