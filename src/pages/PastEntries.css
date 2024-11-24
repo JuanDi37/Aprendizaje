@@ -1,12 +1,13 @@
-/* Estilo global: tema oscuro */
+/* Estilo global: tema oscuro con degradado */
 body {
-  background-color: #121212; /* Dark mode background */
+  background: linear-gradient(to bottom, #1e1e2f, #121212); /* Degradado de azul oscuro a negro */
   color: #e0e0e0;
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
 }
+
 
 /* Título principal */
 h1 {
