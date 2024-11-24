@@ -7,7 +7,7 @@ import Stats from './pages/Stats';
 
 function App() {
   return (
-    <Router basename="/Aprendizaje"> {/* This sets the correct basename */}
+    <Router basename="/Aprendizaje">
       <Routes>
         {/* Redirect root (/) to the welcome screen */}
         <Route path="/" element={<Navigate to="/welcome" replace />} />
