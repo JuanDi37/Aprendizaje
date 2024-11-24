@@ -133,3 +133,33 @@ button {
   font-family: inherit; /* Ensure buttons inherit font styles */
   text-align: center;
 }
+
+/* Contenedor del encabezado */
+.form-header {
+  display: flex;
+  justify-content: flex-start; /* Alinea el botón a la izquierda */
+  align-items: center;
+  margin-bottom: 1.5rem; /* Espacio inferior para separar del contenido */
+  margin-top: 1rem; /* Espacio superior desde el borde */
+  padding-left: 1.5rem; /* Espacio desde el borde izquierdo */
+}
+
+/* Botón para volver al inicio */
+.back-to-home-button {
+  padding: 1rem 1.8rem; /* Tamaño más grande */
+  font-size: 1.3rem; /* Texto más grande */
+  font-weight: bold;
+  background-color: #c2185b; /* Rosa oscuro */
+  color: white; /* Texto blanco */
+  border: none;
+  border-radius: 10px; /* Bordes redondeados */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(194, 24, 91, 0.4); /* Sombra llamativa */
+}
+
+.back-to-home-button:hover {
+  background-color: #880e4f; /* Rosa más oscuro */
+  transform: scale(1.05); /* Leve aumento en tamaño */
+  box-shadow: 0 6px 10px rgba(136, 14, 79, 0.5); /* Sombra más intensa */
+}

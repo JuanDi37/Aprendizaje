@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 import './Form.css';
 
 function Form() {
@@ -13,7 +13,6 @@ function Form() {
     yesterdayGoals: '',
   });
 
-  // Cargar datos previos desde Local Storage al montar el componente
   useEffect(() => {
     const savedData = JSON.parse(localStorage.getItem('dailyForm'));
     if (savedData) {
@@ -21,34 +20,34 @@ function Form() {
     }
   }, []);
 
-  // Manejar cambios en los inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  // Guardar los datos en Local Storage y actualizar historial
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Añadir un timestamp a la entrada
     const entryWithTimestamp = {
       ...formData,
-      timestamp: new Date().toISOString(), // Agregar la fecha y hora actual
+      timestamp: new Date().toISOString(),
     };
 
-    // Guardar entrada actual en el historial
     const history = JSON.parse(localStorage.getItem('dailyFormHistory')) || [];
     history.push(entryWithTimestamp);
     localStorage.setItem('dailyFormHistory', JSON.stringify(history));
 
-    // Guardar la entrada actual
     localStorage.setItem('dailyForm', JSON.stringify(formData));
     alert('¡Tus reflexiones han sido guardadas!');
   };
 
   return (
     <div className="form-container">
+      <div className="form-header">
+        <button className="back-to-home-button" onClick={() => navigate('/')}>
+          Volver al Inicio
+        </button>
+      </div>
       <h1>Formulario Diario</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
