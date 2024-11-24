@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Routes>
         {/* Redirige la ruta raíz (/) a la pantalla de bienvenida */}
-        <Route path="/" element={<Navigate to="/welcome" />} />
+        <Route path="/" element={<Navigate to="/welcome" replace />} />
         
         {/* Ruta para la pantalla de bienvenida */}
         <Route path="/welcome" element={<Welcome />} />
