@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Welcome from './pages/Welcome';
+import Form from './pages/Form';
+import PastEntries from './pages/PastEntries';
+import Stats from './pages/Stats';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* Redirige la ruta raíz (/) a la pantalla de bienvenida */}
+        <Route path="/" element={<Navigate to="/welcome" />} />
+        
+        {/* Ruta para la pantalla de bienvenida */}
+        <Route path="/welcome" element={<Welcome />} />
+        
+        {/* Ruta para el formulario diario */}
+        <Route path="/form" element={<Form />} />
+        
+        {/* Ruta para las entradas pasadas */}
+        <Route path="/entries" element={<PastEntries />} />
+        
+        {/* Ruta para las estadísticas */}
+        <Route path="/stats" element={<Stats />} />
+      </Routes>
+    </Router>
   );
 }
 
